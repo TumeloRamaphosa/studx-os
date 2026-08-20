@@ -6,5 +6,5 @@
 *.key
 backups/
 secrets/
-AGENTS.md
+sources/
 data/*.local.json

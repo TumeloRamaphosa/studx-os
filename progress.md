@@ -25,3 +25,10 @@
 - Desktop UI: command centre, registry counts, project modal, agents, models, integrations, and data-room controls verified.
 - Mobile UI: 390 × 844 layout verified with no horizontal overflow.
 - Visual fix: project-card text contrast corrected after browser inspection.
+
+## 2026-08-21
+
+- Consolidated the STUDX OS architecture and portfolio briefs.
+- Added Rwanda, Africa, trade, data-centre, flight, robotics, markets, health, and content specifications.
+- Added team workspace, integration, model-routing, Rwanda VM, and Vault/Gatekeeper contracts.
+- Prepared a sanitized local Git repository for Gitea once server authentication is available.
