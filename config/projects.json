@@ -1,0 +1,10 @@
+[
+  {"id":"command","name":"Command & Operations","icon":"command","paths":["~/studex-command-center","~/command-center","~/studex-mission-control","~/huly-selfhost"],"tone":"violet"},
+  {"id":"agents","name":"Agents & Automation","icon":"agents","paths":["~/studex-agent-ecosystem","~/studex-orchestrator","~/agent-ops","~/agents-dr","~/hermes-workspace"],"tone":"cyan"},
+  {"id":"knowledge","name":"Brain & Data Room","icon":"brain","paths":["~/obsidian-second-brain","~/Documents/Obsidian Vault","~/Projects/data-room"],"tone":"amber"},
+  {"id":"models","name":"Models & Inference","icon":"model","paths":["~/Projects/model-warehouse","~/minimax-cli","~/OpenJarvis"],"tone":"rose"},
+  {"id":"content","name":"Content Studio","icon":"content","paths":["~/Desktop/studex-content-hub","~/Social-Analytics","~/Documents/safelight-ai-video"],"tone":"pink"},
+  {"id":"products","name":"Websites & Products","icon":"web","paths":["~/studweb-master5","~/studex-paperclip-page","~/Documents/New project"],"tone":"blue"},
+  {"id":"markets","name":"Markets & Ventures","icon":"markets","paths":["~/studex-hedge-fund-os","~/studex-coffee-agents","~/studex-auto-meat"],"tone":"green"},
+  {"id":"health","name":"Health & Personal OS","icon":"health","paths":["~/robusca-platform/mobile/StudExOS"],"tone":"lime"}
+]

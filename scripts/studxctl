@@ -1,0 +1,97 @@
+#!/bin/sh
+set -eu
+
+machine=${STUDX_MACHINE:-studx-dev}
+huly_dir=${HULY_DIR:-/Users/tumeloramaphosa/huly-selfhost}
+huly_compose=${HULY_COMPOSE:-$huly_dir/compose.yml}
+command=${1:-help}
+
+require_huly() {
+  if [ ! -f "$huly_compose" ]; then
+    printf 'Huly Compose file not found: %s\n' "$huly_compose" >&2
+    exit 2
+  fi
+}
+
+huly_compose_run() {
+  require_huly
+  docker compose --project-directory "$huly_dir" -f "$huly_compose" "$@"
+}
+
+case "$command" in
+  status)
+    printf 'OrbStack: '
+    orbctl status
+    printf '\nDevelopment machine:\n'
+    orbctl info "$machine"
+    printf '\nHuly containers:\n'
+    docker ps --filter label=com.docker.compose.project=huly_v7 \
+      --format 'table {{.Names}}\t{{.Status}}'
+    ;;
+  health)
+    orbctl info "$machine" >/dev/null
+    orbctl run -m "$machine" true
+    curl --fail --silent --show-error --max-time 10 \
+      http://127.0.0.1:8087/ >/dev/null
+    unhealthy=$(docker ps --filter label=com.docker.compose.project=huly_v7 \
+      --filter health=unhealthy --quiet)
+    if [ -n "$unhealthy" ]; then
+      printf 'FAIL: Huly has unhealthy containers.\n' >&2
+      exit 1
+    fi
+    printf 'OK: OrbStack, %s command execution, and Huly HTTP are healthy.\n' "$machine"
+    ;;
+  start)
+    orbctl start "$machine"
+    ;;
+  stop)
+    orbctl stop "$machine"
+    ;;
+  restart)
+    orbctl restart "$machine"
+    ;;
+  shell)
+    exec orbctl run -m "$machine"
+    ;;
+  run)
+    shift
+    if [ "$#" -eq 0 ]; then
+      printf 'Usage: %s run COMMAND [ARG...]\n' "$0" >&2
+      exit 2
+    fi
+    exec orbctl run -m "$machine" "$@"
+    ;;
+  huly-start)
+    huly_compose_run up -d
+    ;;
+  huly-stop)
+    huly_compose_run stop
+    ;;
+  huly-restart)
+    huly_compose_run restart
+    ;;
+  huly-logs)
+    shift
+    huly_compose_run logs --tail 200 "$@"
+    ;;
+  doctor)
+    orbctl doctor
+    ;;
+  help|*)
+    printf '%s\n' \
+      'Usage: studxctl COMMAND' \
+      '' \
+      'Commands:' \
+      '  status          Show OrbStack, VM, and Huly state' \
+      '  health          Verify VM execution and Huly HTTP/containers' \
+      '  start|stop      Start or stop only the development VM' \
+      '  restart         Restart only the development VM' \
+      '  shell           Open a shell in the development VM' \
+      '  run CMD...      Run a command in the development VM' \
+      '  huly-start      Start/update the existing Huly Compose stack' \
+      '  huly-stop       Stop Huly without deleting containers/data' \
+      '  huly-restart    Restart Huly services' \
+      '  huly-logs [SVC] Show the last 200 Huly log lines' \
+      '  doctor          Run OrbStack diagnostics'
+    ;;
+esac

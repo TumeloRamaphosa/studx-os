@@ -1,0 +1,12 @@
+{
+  "name": "studx-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-first operating workspace for the STUDX company graph",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js",
+    "scan": "node scripts/scan-workspace.js"
+  },
+  "engines": { "node": ">=20" }
+}

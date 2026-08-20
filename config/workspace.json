@@ -1,0 +1,7 @@
+{
+  "company": "STUDX",
+  "workspace": "Operating Workspace",
+  "mode": "local-first",
+  "principles": ["one task identity", "least privilege", "link rather than duplicate", "human approval for external writes"],
+  "sections": ["today", "missions", "work", "agents", "projects", "content", "health", "brain", "data-room", "infrastructure"]
+}

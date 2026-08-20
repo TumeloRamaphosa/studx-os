@@ -1,0 +1,8 @@
+[
+  {"name":"Chief of Staff","role":"portfolio coordination","scope":"executive summaries","status":"ready"},
+  {"name":"Coding Agent","role":"software delivery","scope":"approved repositories","status":"ready"},
+  {"name":"Content Director","role":"content pipeline","scope":"content projects","status":"ready"},
+  {"name":"Market Analyst","role":"research and opportunities","scope":"markets projects","status":"waiting"},
+  {"name":"Health Companion","role":"private health tracking","scope":"health vault only","status":"locked"},
+  {"name":"Eve Deploy","role":"deployment execution","scope":"approved environments","status":"approval"}
+]

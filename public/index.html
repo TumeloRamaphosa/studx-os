@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a0d">
+  <title>STUDX Workspace</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail">
+      <a class="brand" href="#home" aria-label="STUDX home"><span>S</span></a>
+      <nav aria-label="Workspace">
+        <a class="nav-icon active" href="#home" data-tip="Home">⌂</a>
+        <a class="nav-icon" href="#projects" data-tip="Projects">◇</a>
+        <a class="nav-icon" href="#agents" data-tip="Agents">◎</a>
+        <a class="nav-icon" href="#brain" data-tip="Brain">⌘</a>
+        <a class="nav-icon" href="#data-room" data-tip="Data room">▣</a>
+      </nav>
+      <button class="avatar" aria-label="User menu">TR</button>
+    </aside>
+
+    <aside class="sidebar">
+      <div class="workspace-switcher">
+        <div><small>COMPANY</small><strong>STUDX</strong></div>
+        <button aria-label="Switch workspace">⌄</button>
+      </div>
+      <button class="quick-action"><span>＋</span> Create new</button>
+      <div class="side-group">
+        <small>WORKSPACE</small>
+        <a class="selected" href="#home"><span>⌂</span> Command centre</a>
+        <a href="#today"><span>◷</span> Today <b>6</b></a>
+        <a href="#projects"><span>◇</span> Projects</a>
+        <a href="#content"><span>◉</span> Content studio</a>
+        <a href="#health"><span>♡</span> Health</a>
+      </div>
+      <div class="side-group">
+        <small>INTELLIGENCE</small>
+        <a href="#agents"><span>◎</span> Agents <i class="live-dot"></i></a>
+        <a href="#models"><span>✦</span> Models</a>
+        <a href="#brain"><span>⌘</span> Obsidian brain</a>
+        <a href="#data-room"><span>▣</span> Data room</a>
+      </div>
+      <div class="system-card">
+        <div class="system-card-head"><span>LOCAL SYSTEM</span><i></i></div>
+        <strong>MacBook Pro</strong>
+        <p>M1 Max · 32 GB</p>
+        <div class="meter"><span></span></div>
+        <small>Local-first mode</small>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="menu-button" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumb"><span>STUDX</span><b>/</b> Command centre</div>
+        <div class="top-actions">
+          <label class="search"><span>⌕</span><input id="search" placeholder="Search workspace" aria-label="Search workspace"><kbd>⌘ K</kbd></label>
+          <button class="icon-button" aria-label="Notifications">♢<i></i></button>
+          <button class="connect-button" id="connectionButton"><i></i> Local</button>
+        </div>
+      </header>
+
+      <div class="content" id="home">
+        <section class="welcome">
+          <div>
+            <span class="eyebrow" id="dateLabel">WEDNESDAY · 19 AUGUST</span>
+            <h1>Good morning, Tumelo.</h1>
+            <p>Your company, projects, agents and knowledge. One operating view.</p>
+          </div>
+          <div class="welcome-actions">
+            <button class="secondary" id="syncButton">↻ Refresh</button>
+            <button class="primary" id="briefButton">✦ Daily brief</button>
+          </div>
+        </section>
+
+        <section class="status-strip" aria-label="Workspace summary">
+          <article><span class="status-icon violet">◇</span><div><strong id="projectCount">—</strong><small>Project roots</small></div><em>linked</em></article>
+          <article><span class="status-icon cyan">◎</span><div><strong id="agentCount">—</strong><small>Registered agents</small></div><em>scoped</em></article>
+          <article><span class="status-icon amber">⌁</span><div><strong id="integrationCount">—</strong><small>Integrations</small></div><em>gated</em></article>
+          <article><span class="status-icon green">✓</span><div><strong>Local</strong><small>Security posture</small></div><em>healthy</em></article>
+        </section>
+
+        <div class="dashboard-grid">
+          <section class="panel wide" id="projects">
+            <div class="panel-head"><div><span class="kicker">COMPANY GRAPH</span><h2>Project areas</h2></div><button class="text-button" id="viewProjects">View registry →</button></div>
+            <div class="project-grid" id="projectGrid"><div class="loading">Mapping local projects…</div></div>
+          </section>
+
+          <section class="panel activity" id="today">
+            <div class="panel-head"><div><span class="kicker">TODAY</span><h2>Operating pulse</h2></div><span class="pulse"><i></i> Live</span></div>
+            <div class="timeline">
+              <div><time>07:00</time><i class="green-line"></i><article><strong>Daily company brief</strong><span>Chief of Staff · ready</span></article></div>
+              <div><time>09:30</time><i class="violet-line"></i><article><strong>Projects review</strong><span>8 areas · local registry</span></article></div>
+              <div><time>12:00</time><i class="amber-line"></i><article><strong>Connector approvals</strong><span>Notion · Drive · Gmail</span></article></div>
+              <div><time>16:00</time><i class="cyan-line"></i><article><strong>Local model benchmark</strong><span>Ornith · Llama · MLX</span></article></div>
+            </div>
+          </section>
+
+          <section class="panel" id="agents">
+            <div class="panel-head"><div><span class="kicker">WORKFORCE</span><h2>Agent fleet</h2></div><span class="tag">LEAST PRIVILEGE</span></div>
+            <div class="agent-list" id="agentList"></div>
+          </section>
+
+          <section class="panel" id="models">
+            <div class="panel-head"><div><span class="kicker">LOCAL INTELLIGENCE</span><h2>Model routes</h2></div><span class="tag green-tag">APPLE SILICON</span></div>
+            <div class="model-list" id="modelList"></div>
+          </section>
+
+          <section class="panel integrations-panel" id="brain">
+            <div class="panel-head"><div><span class="kicker">CONNECTED WORK</span><h2>Integration fabric</h2></div><button class="text-button" id="policyButton">Access policy →</button></div>
+            <div class="integration-grid" id="integrationGrid"></div>
+          </section>
+
+          <section class="panel security-panel" id="data-room">
+            <div class="security-orbit"><span>▣</span><i></i><i></i></div>
+            <div><span class="kicker">DATA ROOM</span><h2>Permissions before access.</h2><p>Seven sensitivity levels. Project-scoped agents. Raw secrets stay in the local keychain.</p><button class="secondary" id="securityButton">Review controls</button></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="modal">
+    <div class="modal-head"><span class="kicker" id="modalKicker">STUDX</span><button id="closeModal" aria-label="Close">×</button></div>
+    <h2 id="modalTitle"></h2>
+    <div id="modalBody"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

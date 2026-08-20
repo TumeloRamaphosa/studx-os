@@ -1,0 +1,17 @@
+{
+  "levels": ["public", "internal", "project", "partner-confidential", "financial", "executive", "secret"],
+  "roles": {
+    "owner": ["*"],
+    "chief-of-staff": ["internal", "project", "partner-confidential", "executive"],
+    "engineering-agent": ["internal", "project:code"],
+    "content-agent": ["internal", "project:content"],
+    "health-agent": ["project:health"],
+    "guest": ["public"]
+  },
+  "rules": [
+    "Agents receive project-scoped capabilities, never blanket data-room access.",
+    "Financial, executive, health, and secret material are deny-by-default.",
+    "Every external write requires an audit event and human approval unless explicitly delegated.",
+    "Raw credentials are never returned to agents; a broker performs approved actions."
+  ]
+}

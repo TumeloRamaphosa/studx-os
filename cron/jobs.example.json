@@ -1,0 +1,5 @@
+[
+  {"id":"workspace-health","schedule":"*/15 * * * *","kind":"deterministic","command":"curl -fsS http://127.0.0.1:4310/api/health","enabled":false},
+  {"id":"daily-brief","schedule":"0 7 * * *","kind":"reasoning","agent":"chief-of-staff","output":"brain/Daily Notes.md","enabled":false},
+  {"id":"repo-index","schedule":"0 2 * * 0","kind":"deterministic","command":"npm run scan","enabled":false}
+]

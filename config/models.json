@@ -1,0 +1,7 @@
+[
+  {"id":"ornith-9b","name":"Ornith 1.0 9B","provider":"ollama","purpose":"agentic coding","state":"ready-to-install","fit":"recommended-local"},
+  {"id":"llama-edge","name":"Meta Llama 3.2 3B","provider":"ollama","purpose":"device assistant","state":"ready-to-install","fit":"edge"},
+  {"id":"mlx-local","name":"MLX local route","provider":"mlx","purpose":"Apple Silicon inference","state":"runtime-available","fit":"recommended-local"},
+  {"id":"bionic","name":"LM Studio Bionic","provider":"lm-studio","purpose":"human agent client","state":"optional-install","fit":"desktop"},
+  {"id":"muse-spark","name":"Meta Muse Spark","provider":"meta-cloud","purpose":"multimodal reasoning","state":"cloud-only","fit":"not-local"}
+]
