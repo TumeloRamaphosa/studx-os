@@ -1,0 +1,24 @@
+[Unit]
+Description=STUDX Grokbot agent coordinator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tumeloramaphosa
+WorkingDirectory=/home/tumeloramaphosa/studx/grokbot
+Environment=GROKBOT_HOST=127.0.0.1
+Environment=GROKBOT_PORT=4320
+Environment=OLLAMA_BASE_URL=http://host.internal:11434
+Environment=OLLAMA_MODEL=qwen2.5:14b
+ExecStart=/usr/local/bin/node server.js
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/tumeloramaphosa/studx/grokbot
+
+[Install]
+WantedBy=multi-user.target

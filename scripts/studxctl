@@ -74,6 +74,20 @@ case "$command" in
     shift
     huly_compose_run logs --tail 200 "$@"
     ;;
+  grokbot-status)
+    orbctl run -m "$machine" systemctl status grokbot --no-pager
+    ;;
+  grokbot-health)
+    orbctl run -m "$machine" curl --fail --silent --show-error \
+      http://127.0.0.1:4320/health
+    printf '\n'
+    ;;
+  grokbot-restart)
+    orbctl run -m "$machine" sudo systemctl restart grokbot
+    ;;
+  grokbot-logs)
+    orbctl run -m "$machine" journalctl -u grokbot -n 200 --no-pager
+    ;;
   doctor)
     orbctl doctor
     ;;
@@ -92,6 +106,10 @@ case "$command" in
       '  huly-stop       Stop Huly without deleting containers/data' \
       '  huly-restart    Restart Huly services' \
       '  huly-logs [SVC] Show the last 200 Huly log lines' \
+      '  grokbot-status  Show the Grokbot service state' \
+      '  grokbot-health  Query Grokbot inside the private VM' \
+      '  grokbot-restart Restart the Grokbot service' \
+      '  grokbot-logs    Show the last 200 Grokbot log lines' \
       '  doctor          Run OrbStack diagnostics'
     ;;
 esac

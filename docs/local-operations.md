@@ -32,10 +32,22 @@ Huly is the primary workspace for projects, documents, collaboration, and work t
 ./scripts/studxctl shell
 ./scripts/studxctl run uname -a
 ./scripts/studxctl huly-logs nginx
+./scripts/studxctl grokbot-health
+./scripts/studxctl grokbot-status
+./scripts/studxctl grokbot-restart
+./scripts/studxctl grokbot-logs
 ./scripts/studxctl doctor
 ```
 
 `stop` stops only `studx-dev`; it does not stop Docker or Huly. Huly lifecycle commands use the existing Compose file at `/Users/tumeloramaphosa/huly-selfhost/compose.yml`. No command deletes machines, containers, volumes, or data.
+
+Grokbot runs as a hardened system service inside `studx-dev`, binds only to the VM loopback interface, and reaches the Mac Ollama API through `host.internal`. External connectors remain proposal/draft-only until their scoped credentials and approvals are configured.
+
+To roll back the service without deleting its checkout or data:
+
+```sh
+orbctl run -m studx-dev sudo systemctl disable --now grokbot
+```
 
 ## Multica retirement
 
