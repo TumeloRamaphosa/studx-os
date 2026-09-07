@@ -7,5 +7,9 @@
   {"id":"base44","name":"Base44","role":"app-agents","state":"integration-point","secretRef":"studx/base44/api-token","writePolicy":"approval"},
   {"id":"github","name":"GitHub","role":"code","state":"cli-available","secretRef":"studx/github/token","writePolicy":"approval"},
   {"id":"gitea","name":"Gitea","role":"private-code","state":"integration-point","secretRef":"studx/gitea/token","writePolicy":"approval"},
-  {"id":"obsidian","name":"Obsidian","role":"brain","state":"available-local","source":"brain","writePolicy":"workspace"}
+  {"id":"obsidian","name":"Obsidian","role":"brain","state":"available-local","source":"brain","writePolicy":"workspace"},
+  {"id":"ollama","name":"Ollama","role":"local-model-api","state":"probe-required","baseUrlRef":"OLLAMA_BASE_URL","writePolicy":"local-only"},
+  {"id":"brock-bots","name":"Brock Bots","role":"agent-collaboration","state":"repository-required","source":"pending-user-repo","writePolicy":"approval"},
+  {"id":"wensa-facebook","name":"Wensa / Facebook","role":"social-communications","state":"credentials-required","secretRef":"studx/meta/system-user-token","writePolicy":"draft-then-approval"},
+  {"id":"agentmail","name":"AgentMail","role":"agent-email","state":"credentials-required","secretRef":"studx/agentmail/api-token","writePolicy":"draft-then-approval"}
 ]

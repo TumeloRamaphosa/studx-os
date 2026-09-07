@@ -5,4 +5,7 @@
   {"name":"Market Analyst","role":"research and opportunities","scope":"markets projects","status":"waiting"},
   {"name":"Health Companion","role":"private health tracking","scope":"health vault only","status":"locked"},
   {"name":"Eve Deploy","role":"deployment execution","scope":"approved environments","status":"approval"}
+  ,{"name":"STUDX Start Bot","role":"launch coordination and readiness","scope":"Huly, Gitea, OrbStack, Ollama, integrations","status":"launch-gated"}
+  ,{"name":"Brock Bots Collective","role":"external agent collaborators","scope":"approved repositories and task contracts","status":"repository-required"}
+  ,{"name":"Wensa Social Operator","role":"Facebook coordination","scope":"approved Wensa/Meta pages and drafts","status":"credentials-required"}
 ]
