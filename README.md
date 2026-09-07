@@ -37,3 +37,5 @@ Multica containers have been removed. Its two data volumes are retained temporar
 - `agents-nest/` — standalone agent boardroom and Discord hub interfaces.
 
 See `ARCHITECTURE.md` for the system design and `.env.example` for placeholder-only configuration.
+
+Launch operations are tracked in `docs/START-BOT-LAUNCH.md` and `docs/LAUNCHDAY.md`.

@@ -1,7 +1,7 @@
 [
   {"id":"huly","name":"Huly","role":"operations","state":"available-local","source":"~/huly-selfhost","writePolicy":"approval"},
   {"id":"clickup","name":"ClickUp","role":"task-system","state":"credentials-required","secretRef":"studx/clickup/api-token","writePolicy":"approval"},
-  {"id":"notion","name":"Notion","role":"knowledge","state":"credentials-required","secretRef":"studx/notion/api-token","writePolicy":"approval"},
+  {"id":"notion","name":"Notion","role":"knowledge","state":"connected","secretRef":"managed-notion-connector","writePolicy":"approval"},
   {"id":"drive","name":"Google Drive","role":"documents","state":"credentials-required","secretRef":"studx/google/oauth-client","writePolicy":"approval"},
   {"id":"gmail","name":"Gmail","role":"communications","state":"credentials-required","secretRef":"studx/google/oauth-client","writePolicy":"approval"},
   {"id":"base44","name":"Base44","role":"app-agents","state":"integration-point","secretRef":"studx/base44/api-token","writePolicy":"approval"},
