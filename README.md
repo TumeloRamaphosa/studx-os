@@ -11,6 +11,7 @@ Orchestration: OpenClaw (Mac 1) + bare-metal Tailscale mesh + QwenCloud/local in
 - **MCP catalog:** `mcp/MCP.md` (links to 131-server catalog)
 
 ## Quick links
+- `docs/SEATS.md` — proposed agent seat roster (all not connected)
 - `nodes/NODES.md` — bare-metal manifest
 - `mcp/MCP.md` — MCP integration map
 - `deploy/agents/OPENMANUS.md` — OpenManus on bare metal + integration
